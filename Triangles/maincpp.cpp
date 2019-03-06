@@ -1,9 +1,15 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <stdlib.h>
+
+#include <imgui.h>
+#include "imgui/imgui_impl_glfw.h"
+#include "imgui/imgui_impl_opengl3.h"
+
 using std::string;
 
 void framebuffer_size_callback(GLFWwindow* window, int w, int h);
@@ -98,6 +104,9 @@ int main() {
   // 删除着色器
   glDeleteShader(vertexShader);
   glDeleteShader(fragmentShader);
+
+  // 初始化ImGui
+
 
 
 

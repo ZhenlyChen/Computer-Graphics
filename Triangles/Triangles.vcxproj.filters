@@ -33,4 +33,12 @@
       <Filter>源文件\GLSL</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imgui\imgui_impl_glfw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_opengl3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
