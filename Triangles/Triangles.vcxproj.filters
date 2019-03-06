@@ -16,13 +16,40 @@
     <Filter Include="源文件\GLSL">
       <UniqueIdentifier>{c7c1f526-7591-4b21-ab0a-60bebc90f2c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\glad">
+      <UniqueIdentifier>{f82b152b-2df2-41e1-8398-87139809ff8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\imgui">
+      <UniqueIdentifier>{dd117e64-ec3c-4052-9783-8c6f29a93628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\imgui\impl">
+      <UniqueIdentifier>{b8702c21-b16f-4c83-93a0-14f852f9e5e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="glad.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="maincpp.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>源文件\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui_demo.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui_draw.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui_widgets.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\imgui.cpp">
+      <Filter>源文件\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\examples\imgui_impl_glfw.cpp">
+      <Filter>源文件\imgui\impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui\examples\imgui_impl_opengl3.cpp">
+      <Filter>源文件\imgui\impl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +66,21 @@
     </ClInclude>
     <ClInclude Include="imgui\imgui_impl_opengl3.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\imgui_internal.h">
+      <Filter>源文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\imconfig.h">
+      <Filter>源文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\imgui.h">
+      <Filter>源文件\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\examples\imgui_impl_glfw.h">
+      <Filter>源文件\imgui\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui\examples\imgui_impl_opengl3.h">
+      <Filter>源文件\imgui\impl</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

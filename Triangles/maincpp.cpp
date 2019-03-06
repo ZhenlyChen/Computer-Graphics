@@ -7,6 +7,7 @@
 #include <stdlib.h>
 
 #include <imgui.h>
+#define IMGUI_IMPL_OPENGL_LOADER_GLEW
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
 
@@ -106,24 +107,64 @@ int main() {
   glDeleteShader(fragmentShader);
 
   // ≥ı ºªØImGui
+  IMGUI_CHECKVERSION();
+  ImGui::CreateContext();
+  ImGuiIO& io = ImGui::GetIO(); (void)io;
+  //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;  // Enable Keyboard Controls
+
+  // Setup Dear ImGui style
+  ImGui::StyleColorsDark();
+
+  // Setup Platform/Renderer bindings
+  ImGui_ImplGlfw_InitForOpenGL(window, true);
+  ImGui_ImplOpenGL3_Init("#version 450");
 
 
-
+  ImVec4 triangles_color = ImVec4(0.95f, 0.25f, 0.30f, 1.00f);
+  ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
   while (!glfwWindowShouldClose(window)) {
     processInput(window);
 
-    // ‰÷»æ
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
+
+    // ImGui‰÷»æ
+    {
+      // π§æﬂ¿∏
+      ImGui::Begin("Change color");
+
+      ImGui::ColorEdit3("Triangles color", (float*)&triangles_color);
+      ImGui::ColorEdit3("Clear color", (float*)& clear_color);
+      ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+      ImGui::End();
+    }
+
+    // Rendering
+    ImGui::Render();
+    glfwMakeContextCurrent(window);
+    int display_w, display_h;
+    glfwGetFramebufferSize(window, &display_w, &display_h);
+    glViewport(0, 0, display_w, display_h);
+
+    // OpenGL‰÷»æ
     // ±≥æ∞—’…´
-    // glClearColor(0.2f, 0.5f, 0.8f, 1.0f);
-    // glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(clear_color.x, clear_color.y, clear_color.z, clear_color.w);
+    glClear(GL_COLOR_BUFFER_BIT);
     // ª≠»˝Ω«–Œ
     glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLES, 0, 3);
 
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+    glfwMakeContextCurrent(window);
     glfwSwapBuffers(window);
     glfwPollEvents();
   }
+  // Cleanup
+  ImGui_ImplOpenGL3_Shutdown();
+  ImGui_ImplGlfw_Shutdown();
+  ImGui::DestroyContext();
 
   glDeleteVertexArrays(1, &VAO);
   glDeleteBuffers(1, &VBO);
