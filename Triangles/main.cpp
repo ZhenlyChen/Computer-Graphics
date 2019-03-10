@@ -226,34 +226,28 @@ int main() {
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
-    // ImGui渲染
+    // ImGui 窗口
     {
       // 工具栏
       ImGui::Begin("Change color");
+      ImGui::ColorEdit3("Background color", (float*)& clear_color);
       ImGui::Checkbox("Show color triangle", (bool*)& show_color_triangle);
       ImGui::Checkbox("Show a triangle", (bool*)& show_a_triangle);
-      ImGui::Checkbox("Show wood triangle", (bool*)& show_wood_triangle);
       if (show_a_triangle) {
         ImGui::ColorEdit3("Triangles color", (float*)& triangles_color);
       }
-      ImGui::ColorEdit3("Background color", (float*)& clear_color);
+      ImGui::Checkbox("Show wood triangle", (bool*)& show_wood_triangle);
       ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
       ImGui::End();
     }
-    // Rendering
-    ImGui::Render();
-    glfwMakeContextCurrent(window);
-    int display_w, display_h;
-    glfwGetFramebufferSize(window, &display_w, &display_h);
-    glViewport(0, 0, display_w, display_h);
 
-    // OpenGL渲染
+    // OpenGL 渲染
     // 背景颜色
     glClearColor(clear_color.x, clear_color.y, clear_color.z, clear_color.w);
     glClear(GL_COLOR_BUFFER_BIT);
 
+    // 画三个彩色三角形
     if (show_color_triangle) {
-      // 画三个彩色三角形
       trianglesShader.Use(); // 使用着色器
       glBindVertexArray(VAO_color_triangles);  // 使用预先设定的VAO
       // glDrawArrays(GL_TRIANGLES, 0, 3); // 画三角形
@@ -261,8 +255,8 @@ int main() {
       glBindVertexArray(0); // 解除绑定
     }
 
+    // 画一个奇形怪状三角形
     if (show_a_triangle) {
-      // 画一个奇形怪状三角形
       changeColorShader.Use();
       changeColorShader.SetColor("triColor", triangles_color);
       glBindVertexArray(VAO_a_triangles);
@@ -274,6 +268,7 @@ int main() {
       glBindVertexArray(0);
     }
 
+    // 画一个木头纹理三角形
     if (show_wood_triangle) {
       woodShader.Use();
       glBindVertexArray(VAO_wood_triangles);
@@ -281,6 +276,12 @@ int main() {
       glBindVertexArray(0);
     }
 
+    // ImGui 渲染
+    ImGui::Render();
+    glfwMakeContextCurrent(window);
+    int display_w, display_h;
+    glfwGetFramebufferSize(window, &display_w, &display_h);
+    glViewport(0, 0, display_w, display_h);
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     glfwSwapBuffers(window);
     glfwPollEvents();
@@ -292,6 +293,8 @@ int main() {
 
   glDeleteVertexArrays(1, &VAO_color_triangles);
   glDeleteVertexArrays(1, &VAO_a_triangles);
+  glDeleteVertexArrays(1, &VAO_line);
+  glDeleteVertexArrays(1, &VAO_wood_triangles);
   // glDeleteBuffers(1, &VBO);
   // glDeleteBuffers(1, &EBO);
 
