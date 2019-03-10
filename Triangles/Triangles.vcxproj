@@ -32,6 +32,8 @@
   <ItemGroup>
     <None Include="color_tri.vs.glsl" />
     <None Include="color_tri.fs.glsl" />
+    <None Include="textures.fs.glsl" />
+    <None Include="textures.vs.glsl" />
     <None Include="tri.fs.glsl" />
     <None Include="tri.vs.glsl" />
   </ItemGroup>
@@ -45,6 +47,10 @@
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="shader.h" />
+    <ClInclude Include="stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\wood.jpg" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

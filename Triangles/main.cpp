@@ -6,11 +6,13 @@ using std::string;
 #include <GLFW/glfw3.h>
 
 #include "imgui/imgui.h"
-#define IMGUI_IMPL_OPENGL_LOADER_GLAD
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
 
 #include "shader.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int w, int h);
 void processInput(GLFWwindow* window);
@@ -70,6 +72,63 @@ unsigned int drawColorTriangles() {
   return VAO;
 }
 
+unsigned int drawWoodTriangles() {
+  // 生成纹理
+  unsigned int texture;
+  glGenTextures(1, &texture);
+  glBindTexture(GL_TEXTURE_2D, texture);
+  // set the texture wrapping parameters
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  // set texture filtering parameters
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  // load image, create texture and generate mipmaps
+  // 读取纹理图片
+  int width, height, nrChannels;
+  unsigned char* data = stbi_load("assets/wood.jpg", &width, &height, &nrChannels, 0);
+  if (data) {
+    // 生成纹理
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+  }
+  else {
+    std::cout << "Read textrues failed" << std::endl;
+  }
+  // 释放图片
+  stbi_image_free(data);
+
+
+  float vertices[] = {
+    // 位置              // 纹理
+    0.8f, -0.2f, 0.0f,  1.0f, 1.0f, // 右上
+    0.2f, -0.2f, 0.0f,  0.0f, 1.0f, // 左上
+    0.5f, -0.6f, 0.0f,  0.5f, 0.0f  // 下
+  };
+  // 顶点数组对象
+  unsigned int VAO;
+  glGenVertexArrays(1, &VAO);
+  // 顶点缓冲对象
+  unsigned int VBO;
+  glGenBuffers(1, &VBO);
+  // 绑定缓冲
+  glBindTexture(GL_TEXTURE_2D, texture);
+  glBindVertexArray(VAO);
+  glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+  glBindBuffer(GL_ARRAY_BUFFER, VBO);
+  // 复制数据
+  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+  // 解析顶点数据
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+  glEnableVertexAttribArray(0);
+  // 解析纹理数据
+  glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+  glEnableVertexAttribArray(1);
+  // 解除绑定
+  glBindVertexArray(0);
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  return VAO;
+}
 
 unsigned int drawATriangles() {
   // 顶点
@@ -102,8 +161,14 @@ unsigned int drawATriangles() {
 unsigned int drawLine() {
   // 顶点
   float vertices[] = {
-    -0.5f, -0.6f, 0.0f, // 顶
-    -0.5f, -0.8f, 0.0f
+    -0.5f, -0.6f, 
+    -0.5f, -0.8f,
+    -0.4f, -0.6f,
+    -0.4f, -0.8f,
+    -0.5f, -0.9f,
+    -0.6f, -0.8f,
+    -0.6f, -0.6f,
+    -0.5f, -0.8f,
   };
   // 顶点数组对象
   unsigned int VAO;
@@ -117,7 +182,7 @@ unsigned int drawLine() {
   // 复制数据
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
   // 解析顶点数据
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+  glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
   glEnableVertexAttribArray(0);
   // 解除绑定
   glBindVertexArray(0);
@@ -140,11 +205,19 @@ int main() {
   unsigned int VAO_line = drawLine();
   Shader changeColorShader("color_tri.vs.glsl", "color_tri.fs.glsl");
 
+  // 画一个木头三角
+  unsigned int VAO_wood_triangles = drawWoodTriangles();
+  Shader woodShader("textures.vs.glsl", "textures.fs.glsl");
+  woodShader.Use();
+  woodShader.SetInt("ourTexture", 0);
+
+
   ImVec4 triangles_color = ImVec4(0.0, 1.0, 0.0, 1.0);
   ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
   bool show_color_triangle = true;
   bool show_a_triangle = true;
+  bool show_wood_triangle = true;
 
   while (!glfwWindowShouldClose(window)) {
     processInput(window);
@@ -153,13 +226,13 @@ int main() {
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
-
     // ImGui渲染
     {
       // 工具栏
       ImGui::Begin("Change color");
       ImGui::Checkbox("Show color triangle", (bool*)& show_color_triangle);
       ImGui::Checkbox("Show a triangle", (bool*)& show_a_triangle);
+      ImGui::Checkbox("Show wood triangle", (bool*)& show_wood_triangle);
       if (show_a_triangle) {
         ImGui::ColorEdit3("Triangles color", (float*)& triangles_color);
       }
@@ -189,7 +262,7 @@ int main() {
     }
 
     if (show_a_triangle) {
-      // 画一个三角形
+      // 画一个奇形怪状三角形
       changeColorShader.Use();
       changeColorShader.SetColor("triColor", triangles_color);
       glBindVertexArray(VAO_a_triangles);
@@ -197,7 +270,14 @@ int main() {
       glBindVertexArray(0);
 
       glBindVertexArray(VAO_line);
-      glDrawArrays(GL_LINE, 0, 2);
+      glDrawArrays(GL_LINE_STRIP, 0, 8);
+      glBindVertexArray(0);
+    }
+
+    if (show_wood_triangle) {
+      woodShader.Use();
+      glBindVertexArray(VAO_wood_triangles);
+      glDrawArrays(GL_TRIANGLES, 0, 3);
       glBindVertexArray(0);
     }
 
@@ -237,7 +317,6 @@ GLFWwindow* initWindow(const char* title) {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-
   // 初始化窗体
   GLFWwindow* window = glfwCreateWindow(window_width, window_height, title, NULL, NULL);
   if (window == NULL) {
@@ -270,5 +349,7 @@ GLFWwindow* initWindow(const char* title) {
   // Setup Platform/Renderer bindings
   ImGui_ImplGlfw_InitForOpenGL(window, true);
   ImGui_ImplOpenGL3_Init("#version 450");
+  // glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+
   return window;
 }
