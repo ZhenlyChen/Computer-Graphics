@@ -81,7 +81,7 @@ GLFWwindow* initWindow(const char* title, int height, int width) {
   glfwSwapInterval(1); // Enable vsync
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-  glfwSetWindowSizeLimits(window, width, height, width, height);
+  // glfwSetWindowSizeLimits(window, width, height, width, height);
 
   // ≥ı ºªØGLAD
   if (!gladLoadGL()) {

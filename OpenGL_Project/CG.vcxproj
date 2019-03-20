@@ -50,8 +50,8 @@
     <Image Include="assets\wood.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Points\glsl\line.fs.glsl" />
-    <None Include="Points\glsl\line.vs.glsl" />
+    <None Include="Points\glsl\point.fs.glsl" />
+    <None Include="Points\glsl\point.vs.glsl" />
     <None Include="triangles\glsl\color_tri.fs.glsl" />
     <None Include="triangles\glsl\color_tri.vs.glsl" />
     <None Include="triangles\glsl\textures.fs.glsl" />

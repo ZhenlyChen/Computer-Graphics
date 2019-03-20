@@ -138,10 +138,10 @@
     <None Include="triangles\glsl\color_tri.fs.glsl">
       <Filter>源文件\Triangles\glsl</Filter>
     </None>
-    <None Include="Points\glsl\line.vs.glsl">
+    <None Include="Points\glsl\point.fs.glsl">
       <Filter>源文件\Points\glsl</Filter>
     </None>
-    <None Include="Points\glsl\line.fs.glsl">
+    <None Include="Points\glsl\point.vs.glsl">
       <Filter>源文件\Points\glsl</Filter>
     </None>
   </ItemGroup>
