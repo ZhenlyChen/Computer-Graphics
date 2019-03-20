@@ -9,13 +9,16 @@ using std::string;
 #include <GLFW/glfw3.h>
 #include "application.h"
 #include "triangles/triangles.h"
+#include "Points/Points.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int w, int h);
 GLFWwindow* initWindow(const char* title, int height, int width);
 
 int main() {
   // 初始化
-  Application *app = new Triangles();
+  // Application *app = new Triangles();
+  Application* app = new Points();
+
 
   GLFWwindow* window = initWindow(app->title.c_str(), app->defaultHeight, app->defaultWidth);
   if (window == NULL) return -1;
@@ -30,6 +33,8 @@ int main() {
     ImGui::NewFrame();
 
     app->render();
+
+    // ImGui::ShowDemoWindow();
 
     // ImGui 渲染
     ImGui::Render();
@@ -75,6 +80,8 @@ GLFWwindow* initWindow(const char* title, int height, int width) {
   glfwMakeContextCurrent(window); 
   glfwSwapInterval(1); // Enable vsync
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+  glfwSetWindowSizeLimits(window, width, height, width, height);
 
   // 初始化GLAD
   if (!gladLoadGL()) {

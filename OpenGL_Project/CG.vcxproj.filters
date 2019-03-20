@@ -31,6 +31,12 @@
     <Filter Include="源文件\Triangles\glsl">
       <UniqueIdentifier>{2ec5f42d-0f57-4388-b61e-e9e25f9ee6b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Points">
+      <UniqueIdentifier>{68952fc4-fd69-44af-a8bc-5f117a518834}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Points\glsl">
+      <UniqueIdentifier>{95ad507b-d132-49de-9461-0d9006e828a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="triangles\Triangles.cpp">
       <Filter>源文件\Triangles</Filter>
+    </ClCompile>
+    <ClCompile Include="Points\Points.cpp">
+      <Filter>源文件\Points</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +110,9 @@
     <ClInclude Include="triangles\Triangles.h">
       <Filter>源文件\Triangles</Filter>
     </ClInclude>
+    <ClInclude Include="Points\Points.h">
+      <Filter>源文件\Points</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\wood.jpg">
@@ -125,6 +137,12 @@
     </None>
     <None Include="triangles\glsl\color_tri.fs.glsl">
       <Filter>源文件\Triangles\glsl</Filter>
+    </None>
+    <None Include="Points\glsl\line.vs.glsl">
+      <Filter>源文件\Points\glsl</Filter>
+    </None>
+    <None Include="Points\glsl\line.fs.glsl">
+      <Filter>源文件\Points\glsl</Filter>
     </None>
   </ItemGroup>
 </Project>

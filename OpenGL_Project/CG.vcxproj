@@ -28,6 +28,7 @@
     <ClCompile Include="lib\imgui\imgui_widgets.cpp" />
     <ClCompile Include="lib\shader\shader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Points\Points.cpp" />
     <ClCompile Include="triangles\Triangles.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -42,12 +43,15 @@
     <ClInclude Include="lib\imgui\imstb_truetype.h" />
     <ClInclude Include="lib\shader\shader.h" />
     <ClInclude Include="lib\stb_image.h" />
+    <ClInclude Include="Points\Points.h" />
     <ClInclude Include="triangles\Triangles.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\wood.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Points\glsl\line.fs.glsl" />
+    <None Include="Points\glsl\line.vs.glsl" />
     <None Include="triangles\glsl\color_tri.fs.glsl" />
     <None Include="triangles\glsl\color_tri.vs.glsl" />
     <None Include="triangles\glsl\textures.fs.glsl" />
