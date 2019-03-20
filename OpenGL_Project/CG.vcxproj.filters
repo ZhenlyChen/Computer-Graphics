@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\triangles">
-      <UniqueIdentifier>{5ae5808f-de3b-4fdd-89ed-c1bc07f15034}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\triangles\glsl">
-      <UniqueIdentifier>{2ec5f42d-0f57-4388-b61e-e9e25f9ee6b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\lib">
       <UniqueIdentifier>{5b276d1a-6253-4b4c-8b09-ff8bf525ee05}</UniqueIdentifier>
     </Filter>
@@ -30,6 +24,12 @@
     </Filter>
     <Filter Include="源文件\lib\shader">
       <UniqueIdentifier>{07b23288-a28a-4b3f-9c06-543d10a28656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Triangles">
+      <UniqueIdentifier>{5ae5808f-de3b-4fdd-89ed-c1bc07f15034}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Triangles\glsl">
+      <UniqueIdentifier>{2ec5f42d-0f57-4388-b61e-e9e25f9ee6b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,7 +61,7 @@
       <Filter>源文件\lib\shader</Filter>
     </ClCompile>
     <ClCompile Include="triangles\Triangles.cpp">
-      <Filter>源文件\triangles</Filter>
+      <Filter>源文件\Triangles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +99,7 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="triangles\Triangles.h">
-      <Filter>源文件\triangles</Filter>
+      <Filter>源文件\Triangles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -109,22 +109,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="triangles\glsl\color_tri.vs.glsl">
-      <Filter>源文件\triangles\glsl</Filter>
+      <Filter>源文件\Triangles\glsl</Filter>
     </None>
     <None Include="triangles\glsl\textures.fs.glsl">
-      <Filter>源文件\triangles\glsl</Filter>
+      <Filter>源文件\Triangles\glsl</Filter>
     </None>
     <None Include="triangles\glsl\textures.vs.glsl">
-      <Filter>源文件\triangles\glsl</Filter>
+      <Filter>源文件\Triangles\glsl</Filter>
     </None>
     <None Include="triangles\glsl\tri.fs.glsl">
-      <Filter>源文件\triangles\glsl</Filter>
+      <Filter>源文件\Triangles\glsl</Filter>
     </None>
     <None Include="triangles\glsl\tri.vs.glsl">
-      <Filter>源文件\triangles\glsl</Filter>
+      <Filter>源文件\Triangles\glsl</Filter>
     </None>
     <None Include="triangles\glsl\color_tri.fs.glsl">
-      <Filter>源文件\triangles\glsl</Filter>
+      <Filter>源文件\Triangles\glsl</Filter>
     </None>
   </ItemGroup>
 </Project>

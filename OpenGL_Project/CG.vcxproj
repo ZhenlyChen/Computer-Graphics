@@ -60,7 +60,7 @@
     <ProjectGuid>{DE740840-C9DA-438C-912B-8C262898A7F8}</ProjectGuid>
     <RootNamespace>Triangles</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>OpenGL_triangles</ProjectName>
+    <ProjectName>OpenGL_CG</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
