@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\triangles">
+      <UniqueIdentifier>{5ae5808f-de3b-4fdd-89ed-c1bc07f15034}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\triangles\glsl">
+      <UniqueIdentifier>{2ec5f42d-0f57-4388-b61e-e9e25f9ee6b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lib">
+      <UniqueIdentifier>{5b276d1a-6253-4b4c-8b09-ff8bf525ee05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lib\imgui">
+      <UniqueIdentifier>{dd117e64-ec3c-4052-9783-8c6f29a93628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lib\glad">
+      <UniqueIdentifier>{610827d0-9a2e-4ae3-bcca-5ebae218b741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lib\shader">
+      <UniqueIdentifier>{07b23288-a28a-4b3f-9c06-543d10a28656}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui.cpp">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_demo.cpp">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_draw.cpp">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_impl_glfw.cpp">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_impl_opengl3.cpp">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_widgets.cpp">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\glad\glad.c">
+      <Filter>源文件\lib\glad</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\shader\shader.cpp">
+      <Filter>源文件\lib\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="triangles\Triangles.cpp">
+      <Filter>源文件\triangles</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\imgui\imgui_internal.h">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imstb_rectpack.h">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imstb_textedit.h">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imstb_truetype.h">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imconfig.h">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imgui.h">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imgui_impl_glfw.h">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imgui_impl_opengl3.h">
+      <Filter>源文件\lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\shader\shader.h">
+      <Filter>源文件\lib\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\stb_image.h">
+      <Filter>源文件\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="triangles\Triangles.h">
+      <Filter>源文件\triangles</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\wood.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="triangles\glsl\color_tri.vs.glsl">
+      <Filter>源文件\triangles\glsl</Filter>
+    </None>
+    <None Include="triangles\glsl\textures.fs.glsl">
+      <Filter>源文件\triangles\glsl</Filter>
+    </None>
+    <None Include="triangles\glsl\textures.vs.glsl">
+      <Filter>源文件\triangles\glsl</Filter>
+    </None>
+    <None Include="triangles\glsl\tri.fs.glsl">
+      <Filter>源文件\triangles\glsl</Filter>
+    </None>
+    <None Include="triangles\glsl\tri.vs.glsl">
+      <Filter>源文件\triangles\glsl</Filter>
+    </None>
+    <None Include="triangles\glsl\color_tri.fs.glsl">
+      <Filter>源文件\triangles\glsl</Filter>
+    </None>
+  </ItemGroup>
+</Project>

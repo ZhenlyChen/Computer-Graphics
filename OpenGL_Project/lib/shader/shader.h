@@ -1,7 +1,7 @@
 #pragma once
 
 #include <glad/glad.h>
-#include "imgui/imgui.h"
+#include "../imgui/imgui.h"
 
 #include <string>
 #include <fstream>
