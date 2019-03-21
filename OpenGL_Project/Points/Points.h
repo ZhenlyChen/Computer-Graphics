@@ -28,7 +28,6 @@ private:
 
   int point_count;
   int vertices[1000000];
-
   float finalVertices[1000000];
 
   int triangles_vertices[6];

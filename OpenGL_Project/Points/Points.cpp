@@ -119,8 +119,6 @@ void Points::render() {
     ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
     ImGui::End();
   }
-
-
 }
 
 void Points::clear() {
@@ -160,13 +158,9 @@ void Points::drawPoint() {
   glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
   glEnableVertexAttribArray(0);
   // ½â³ý°ó¶¨
-  //glBindVertexArray(0);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-  //glBindVertexArray(VAO_line);
   glDrawArrays(GL_POINTS, 0, point_count / 2);
   glBindVertexArray(0);
-
   glDeleteVertexArrays(1, &VAO);
   glDeleteBuffers(1, &VBO);
   point_count = 0;
@@ -201,7 +195,6 @@ void Points::calcLine(int start_x, int start_y, int end_x, int end_y) {
     reverse ? addPoint(y, x) : addPoint(x, y);
   }
 }
-
 
 void Points::calcCircle(int cx, int cy, int r) {
   int x = 0;
