@@ -37,6 +37,21 @@
     <Filter Include="源文件\Points\glsl">
       <UniqueIdentifier>{95ad507b-d132-49de-9461-0d9006e828a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Transformation">
+      <UniqueIdentifier>{5cc911c1-d9c6-4fd0-9aed-3418be6e2dc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Transformation\glsl">
+      <UniqueIdentifier>{7777eb20-5fb9-4395-909f-acd41582db45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Camera">
+      <UniqueIdentifier>{4a60c6d2-5f5f-4a0d-985c-b061f92c7388}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Camera\glsl">
+      <UniqueIdentifier>{9d8b46df-8799-46ef-820a-03a93831f384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lib\camera">
+      <UniqueIdentifier>{bf0669b3-8531-4dfc-a2a1-a511488c5785}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,6 +86,15 @@
     </ClCompile>
     <ClCompile Include="Points\Points.cpp">
       <Filter>源文件\Points</Filter>
+    </ClCompile>
+    <ClCompile Include="Transformation\Transformation.cpp">
+      <Filter>源文件\Transformation</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\CameraApp.cpp">
+      <Filter>源文件\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\camera\Camera.cpp">
+      <Filter>源文件\lib\camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +137,15 @@
     <ClInclude Include="Points\Points.h">
       <Filter>源文件\Points</Filter>
     </ClInclude>
+    <ClInclude Include="Transformation\Transformation.h">
+      <Filter>源文件\Transformation</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraApp.h">
+      <Filter>源文件\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\camera\Camera.h">
+      <Filter>源文件\lib\camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\wood.jpg">
@@ -143,6 +176,18 @@
     </None>
     <None Include="Points\glsl\point.vs.glsl">
       <Filter>源文件\Points\glsl</Filter>
+    </None>
+    <None Include="Transformation\glsl\cube.fs.glsl">
+      <Filter>源文件\Transformation\glsl</Filter>
+    </None>
+    <None Include="Transformation\glsl\cube.vs.glsl">
+      <Filter>源文件\Transformation\glsl</Filter>
+    </None>
+    <None Include="Camera\glsl\cube.fs.glsl">
+      <Filter>源文件\Camera\glsl</Filter>
+    </None>
+    <None Include="Camera\glsl\cube.vs.glsl">
+      <Filter>源文件\Camera\glsl</Filter>
     </None>
   </ItemGroup>
 </Project>

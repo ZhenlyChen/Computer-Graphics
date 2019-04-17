@@ -4,6 +4,9 @@
 
 class Triangles : public Application {
 public:
+  void init(GLFWwindow* window) {
+
+  }
   void input(GLFWwindow* window);
   void render();
   void clear();

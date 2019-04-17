@@ -49,6 +49,11 @@ void Shader::SetColor(const std::string& name, ImVec4 value) const {
   glUniform4f(glGetUniformLocation(this->id, name.c_str()), value.x,value.y, value.z, 1.0f);
 }
 
+
+void Shader::SetMat4(const std::string& name, glm::mat4 &value) const {
+  glUniformMatrix4fv(glGetUniformLocation(this->id, name.c_str()), 1, GL_FALSE, &value[0][0]);
+}
+
 std::string Shader::loadFile(const char* path) {
   std::string shaderCode;
   std::ifstream shaderFile;

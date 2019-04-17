@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camera\CameraApp.cpp" />
+    <ClCompile Include="lib\camera\Camera.cpp" />
     <ClCompile Include="lib\glad\glad.c" />
     <ClCompile Include="lib\imgui\imgui.cpp" />
     <ClCompile Include="lib\imgui\imgui_demo.cpp" />
@@ -29,10 +31,13 @@
     <ClCompile Include="lib\shader\shader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Points\Points.cpp" />
+    <ClCompile Include="Transformation\Transformation.cpp" />
     <ClCompile Include="triangles\Triangles.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Camera\CameraApp.h" />
+    <ClInclude Include="lib\camera\Camera.h" />
     <ClInclude Include="lib\imgui\imconfig.h" />
     <ClInclude Include="lib\imgui\imgui.h" />
     <ClInclude Include="lib\imgui\imgui_impl_glfw.h" />
@@ -44,14 +49,19 @@
     <ClInclude Include="lib\shader\shader.h" />
     <ClInclude Include="lib\stb_image.h" />
     <ClInclude Include="Points\Points.h" />
+    <ClInclude Include="Transformation\Transformation.h" />
     <ClInclude Include="triangles\Triangles.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\wood.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Camera\glsl\cube.fs.glsl" />
+    <None Include="Camera\glsl\cube.vs.glsl" />
     <None Include="Points\glsl\point.fs.glsl" />
     <None Include="Points\glsl\point.vs.glsl" />
+    <None Include="Transformation\glsl\cube.fs.glsl" />
+    <None Include="Transformation\glsl\cube.vs.glsl" />
     <None Include="triangles\glsl\color_tri.fs.glsl" />
     <None Include="triangles\glsl\color_tri.vs.glsl" />
     <None Include="triangles\glsl\textures.fs.glsl" />

@@ -8,6 +8,7 @@
 #include <GLFW/glfw3.h>
 #include "../lib/shader/shader.h"
 
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "../lib/stb_image.h"
 

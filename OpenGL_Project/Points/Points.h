@@ -5,6 +5,9 @@
 class Points : public Application {
 public:
   Points();
+  void init(GLFWwindow* window) {
+
+  }
   void input(GLFWwindow* window);
   void render();
   void clear();

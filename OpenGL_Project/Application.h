@@ -6,6 +6,8 @@
 
 class Application {
 public:
+  virtual void init(GLFWwindow* window) = 0;
+
   virtual void prepare() = 0;
 
   virtual void render() = 0;
