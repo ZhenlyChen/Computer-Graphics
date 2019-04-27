@@ -7,7 +7,7 @@ static Camera* CameraInst;
 Camera::Camera(GLFWwindow* window, int height, int width) {
   CameraInst = this;
 
-  this->Position = glm::vec3(0.0f, 5.0f, 20.0f);
+  this->Position = glm::vec3(0.0f, 3.0f, 10.0f);
   this->Front = glm::vec3(0.0f, 0.0f, 0.0f);
   this->WorldUp = glm::vec3(0.0f, 1.0f, 0.0f);
   this->Up = glm::vec3(0.0f, 1.0f, 0.0f);
@@ -50,10 +50,17 @@ void Camera::ProcessInput(GLFWwindow* window) {
     Position -= Right * velocity;
   if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
     Position += Right * velocity;
+  if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
+    Position += Up * velocity;
+  if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS)
+    Position -= Up * velocity;
 
+
+  // 捕获鼠标
   if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
+  // 释放鼠标
   if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
@@ -61,8 +68,7 @@ void Camera::ProcessInput(GLFWwindow* window) {
 void Camera::MouseCallback(GLFWwindow* window, double xpos, double ypos)
 {
   if (!CameraInst->enableControl) return;
-  if (CameraInst->firstMouse)
-  {
+  if (CameraInst->firstMouse) {
     CameraInst->lastX = xpos;
     CameraInst->lastY = ypos;
     CameraInst->firstMouse = false;

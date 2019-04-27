@@ -12,6 +12,7 @@ using std::string;
 #include "Points/Points.h"
 #include "Transformation/Transformation.h"
 #include "Camera/CameraApp.h"
+#include "Light/Light.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int w, int h);
 GLFWwindow* initWindow(Application* app, int height, int width);
@@ -21,7 +22,8 @@ int main() {
   // Application *app = new Triangles();
   // Application* app = new Points();
   // Application* app = new Transformation();
-  Application* app = new CameraApp();
+  // Application* app = new CameraApp();
+  Application* app = new LightApp();
 
   GLFWwindow* window = initWindow(app, app->defaultHeight, app->defaultWidth);
   if (window == NULL) return -1;

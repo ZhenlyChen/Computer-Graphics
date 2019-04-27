@@ -52,6 +52,12 @@
     <Filter Include="源文件\lib\camera">
       <UniqueIdentifier>{bf0669b3-8531-4dfc-a2a1-a511488c5785}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Light">
+      <UniqueIdentifier>{63f510aa-b675-48ec-81c6-6d820330b87e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Light\glsl">
+      <UniqueIdentifier>{a5adb4d5-48c9-44cd-a9e0-ff9bd790e7be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -95,6 +101,9 @@
     </ClCompile>
     <ClCompile Include="lib\camera\Camera.cpp">
       <Filter>源文件\lib\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Light\Light.cpp">
+      <Filter>源文件\Light</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +155,9 @@
     <ClInclude Include="lib\camera\Camera.h">
       <Filter>源文件\lib\camera</Filter>
     </ClInclude>
+    <ClInclude Include="Light\Light.h">
+      <Filter>源文件\Light</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\wood.jpg">
@@ -188,6 +200,24 @@
     </None>
     <None Include="Camera\glsl\cube.vs.glsl">
       <Filter>源文件\Camera\glsl</Filter>
+    </None>
+    <None Include="Light\glsl\light.vs.glsl">
+      <Filter>源文件\Light\glsl</Filter>
+    </None>
+    <None Include="Light\glsl\light.fs.glsl">
+      <Filter>源文件\Light\glsl</Filter>
+    </None>
+    <None Include="Light\glsl\phongCube.fs.glsl">
+      <Filter>源文件\Light\glsl</Filter>
+    </None>
+    <None Include="Light\glsl\phongCube.vs.glsl">
+      <Filter>源文件\Light\glsl</Filter>
+    </None>
+    <None Include="Light\glsl\gouraudCube.vs.glsl">
+      <Filter>源文件\Light\glsl</Filter>
+    </None>
+    <None Include="Light\glsl\gouraudCube.fs.glsl">
+      <Filter>源文件\Light\glsl</Filter>
     </None>
   </ItemGroup>
 </Project>
