@@ -58,6 +58,15 @@
     <Filter Include="源文件\Light\glsl">
       <UniqueIdentifier>{a5adb4d5-48c9-44cd-a9e0-ff9bd790e7be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Shadow">
+      <UniqueIdentifier>{59720fb9-9358-4e98-bcbd-7496191f698a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Shadow\glsl">
+      <UniqueIdentifier>{9473b908-1c11-46e3-97a4-8461305aaf19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\lib\stb_image">
+      <UniqueIdentifier>{86781660-3b74-4c9e-90e0-ff01e4cc838b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -105,6 +114,12 @@
     <ClCompile Include="Light\Light.cpp">
       <Filter>源文件\Light</Filter>
     </ClCompile>
+    <ClCompile Include="Shadow\Shadow.cpp">
+      <Filter>源文件\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\stb_image.cpp">
+      <Filter>源文件\lib\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\imgui\imgui_internal.h">
@@ -134,9 +149,6 @@
     <ClInclude Include="lib\shader\shader.h">
       <Filter>源文件\lib\shader</Filter>
     </ClInclude>
-    <ClInclude Include="lib\stb_image.h">
-      <Filter>源文件\lib</Filter>
-    </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -157,6 +169,12 @@
     </ClInclude>
     <ClInclude Include="Light\Light.h">
       <Filter>源文件\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Shadow\Shadow.h">
+      <Filter>源文件\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\stb_image.h">
+      <Filter>源文件\lib\stb_image</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +236,24 @@
     </None>
     <None Include="Light\glsl\gouraudCube.fs.glsl">
       <Filter>源文件\Light\glsl</Filter>
+    </None>
+    <None Include="Shadow\glsl\lightObject.vs.glsl">
+      <Filter>源文件\Shadow\glsl</Filter>
+    </None>
+    <None Include="Shadow\glsl\lightObject.fs.glsl">
+      <Filter>源文件\Shadow\glsl</Filter>
+    </None>
+    <None Include="Shadow\glsl\light.vs.glsl">
+      <Filter>源文件\Shadow\glsl</Filter>
+    </None>
+    <None Include="Shadow\glsl\light.fs.glsl">
+      <Filter>源文件\Shadow\glsl</Filter>
+    </None>
+    <None Include="Shadow\glsl\depth.fs.glsl">
+      <Filter>源文件\Shadow\glsl</Filter>
+    </None>
+    <None Include="Shadow\glsl\depth.vs.glsl">
+      <Filter>源文件\Shadow\glsl</Filter>
     </None>
   </ItemGroup>
 </Project>

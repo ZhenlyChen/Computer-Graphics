@@ -29,9 +29,11 @@
     <ClCompile Include="lib\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="lib\imgui\imgui_widgets.cpp" />
     <ClCompile Include="lib\shader\shader.cpp" />
+    <ClCompile Include="lib\stb_image.cpp" />
     <ClCompile Include="Light\Light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Points\Points.cpp" />
+    <ClCompile Include="Shadow\Shadow.cpp" />
     <ClCompile Include="Transformation\Transformation.cpp" />
     <ClCompile Include="triangles\Triangles.cpp" />
   </ItemGroup>
@@ -51,6 +53,7 @@
     <ClInclude Include="lib\stb_image.h" />
     <ClInclude Include="Light\Light.h" />
     <ClInclude Include="Points\Points.h" />
+    <ClInclude Include="Shadow\Shadow.h" />
     <ClInclude Include="Transformation\Transformation.h" />
     <ClInclude Include="triangles\Triangles.h" />
   </ItemGroup>
@@ -68,6 +71,12 @@
     <None Include="Light\glsl\light.vs.glsl" />
     <None Include="Points\glsl\point.fs.glsl" />
     <None Include="Points\glsl\point.vs.glsl" />
+    <None Include="Shadow\glsl\depth.fs.glsl" />
+    <None Include="Shadow\glsl\depth.vs.glsl" />
+    <None Include="Shadow\glsl\light.fs.glsl" />
+    <None Include="Shadow\glsl\light.vs.glsl" />
+    <None Include="Shadow\glsl\lightObject.fs.glsl" />
+    <None Include="Shadow\glsl\lightObject.vs.glsl" />
     <None Include="Transformation\glsl\cube.fs.glsl" />
     <None Include="Transformation\glsl\cube.vs.glsl" />
     <None Include="triangles\glsl\color_tri.fs.glsl" />
