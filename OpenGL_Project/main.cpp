@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using std::string;
 
 #include "lib/imgui/imgui.h"
@@ -14,18 +14,20 @@ using std::string;
 #include "Camera/CameraApp.h"
 #include "Light/Light.h"
 #include "Shadow/Shadow.h"
+#include "Bezier/BezierApp.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int w, int h);
 GLFWwindow* initWindow(Application* app, int height, int width);
-
+Application* app;
 int main() {
-  // ³õÊ¼»¯
+  // åˆå§‹åŒ–
   // Application *app = new Triangles();
   // Application* app = new Points();
   // Application* app = new Transformation();
   // Application* app = new CameraApp();
   // Application* app = new ShadowApp();
-  Application* app = new ShadowApp();
+  // Application* app = new ShadowApp();
+  app = new BezierApp();
 
   GLFWwindow* window = initWindow(app, app->defaultHeight, app->defaultWidth);
   if (window == NULL) return -1;
@@ -43,7 +45,7 @@ int main() {
 
     // ImGui::ShowDemoWindow();
 
-    // ImGui äÖÈ¾
+    // ImGui æ¸²æŸ“
     ImGui::Render();
     glfwMakeContextCurrent(window);
     int display_w, display_h;
@@ -67,17 +69,19 @@ int main() {
 
 void framebuffer_size_callback(GLFWwindow* window, int w, int h) {
   glViewport(0, 0, w, h);
+  app->updateWindowSize(h, w);
+  
 }
 
 GLFWwindow* initWindow(Application* app, int height, int width) {
-  // ³õÊ¼»¯GLFW
+  // åˆå§‹åŒ–GLFW
   glfwInit();
   // OpenGL 4.5
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-  // ³õÊ¼»¯´°Ìå
+  // åˆå§‹åŒ–çª—ä½“
   GLFWwindow* window = glfwCreateWindow(width, height, app->title.c_str(), NULL, NULL);
   if (window == NULL) {
     std::cout << "Failed to create GLFW window" << std::endl;
@@ -90,16 +94,16 @@ GLFWwindow* initWindow(Application* app, int height, int width) {
 
   // glfwSetWindowSizeLimits(window, width, height, width, height);
 
-  // ³õÊ¼»¯GLAD
+  // åˆå§‹åŒ–GLAD
   if (!gladLoadGL()) {
     std::cout << "Failed to initialize GLAD" << std::endl;
     return NULL;
   }
 
-  // ³õÊ¼»¯ÊÓ¿Ú
+  // åˆå§‹åŒ–è§†å£
   glViewport(0, 0, width, height);
 
-  // ³õÊ¼»¯ImGui
+  // åˆå§‹åŒ–ImGui
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
   ImGuiIO& io = ImGui::GetIO(); (void)io;

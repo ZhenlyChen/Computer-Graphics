@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bezier\BezierApp.cpp" />
     <ClCompile Include="Camera\CameraApp.cpp" />
     <ClCompile Include="lib\camera\Camera.cpp" />
-    <ClCompile Include="lib\glad\glad.c" />
     <ClCompile Include="lib\imgui\imgui.cpp" />
     <ClCompile Include="lib\imgui\imgui_demo.cpp" />
     <ClCompile Include="lib\imgui\imgui_draw.cpp" />
@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Bezier\BezierApp.h" />
     <ClInclude Include="Camera\CameraApp.h" />
     <ClInclude Include="lib\camera\Camera.h" />
     <ClInclude Include="lib\imgui\imconfig.h" />
@@ -63,6 +64,8 @@
   <ItemGroup>
     <None Include="Camera\glsl\cube.fs.glsl" />
     <None Include="Camera\glsl\cube.vs.glsl" />
+    <None Include="GLSL\2D.fs.glsl" />
+    <None Include="GLSL\2D.vs.glsl" />
     <None Include="Light\glsl\gouraudCube.fs.glsl" />
     <None Include="Light\glsl\gouraudCube.vs.glsl" />
     <None Include="Light\glsl\phongCube.fs.glsl" />

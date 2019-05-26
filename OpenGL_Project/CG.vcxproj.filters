@@ -13,18 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\lib">
-      <UniqueIdentifier>{5b276d1a-6253-4b4c-8b09-ff8bf525ee05}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\lib\imgui">
-      <UniqueIdentifier>{dd117e64-ec3c-4052-9783-8c6f29a93628}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\lib\glad">
-      <UniqueIdentifier>{610827d0-9a2e-4ae3-bcca-5ebae218b741}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\lib\shader">
-      <UniqueIdentifier>{07b23288-a28a-4b3f-9c06-543d10a28656}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Triangles">
       <UniqueIdentifier>{5ae5808f-de3b-4fdd-89ed-c1bc07f15034}</UniqueIdentifier>
     </Filter>
@@ -49,9 +37,6 @@
     <Filter Include="源文件\Camera\glsl">
       <UniqueIdentifier>{9d8b46df-8799-46ef-820a-03a93831f384}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\lib\camera">
-      <UniqueIdentifier>{bf0669b3-8531-4dfc-a2a1-a511488c5785}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Light">
       <UniqueIdentifier>{63f510aa-b675-48ec-81c6-6d820330b87e}</UniqueIdentifier>
     </Filter>
@@ -64,8 +49,26 @@
     <Filter Include="源文件\Shadow\glsl">
       <UniqueIdentifier>{9473b908-1c11-46e3-97a4-8461305aaf19}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\lib\stb_image">
+    <Filter Include="源文件\Lib">
+      <UniqueIdentifier>{5b276d1a-6253-4b4c-8b09-ff8bf525ee05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lib\imgui">
+      <UniqueIdentifier>{dd117e64-ec3c-4052-9783-8c6f29a93628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lib\shader">
+      <UniqueIdentifier>{07b23288-a28a-4b3f-9c06-543d10a28656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lib\camera">
+      <UniqueIdentifier>{bf0669b3-8531-4dfc-a2a1-a511488c5785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lib\stb_image">
       <UniqueIdentifier>{86781660-3b74-4c9e-90e0-ff01e4cc838b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Bezier">
+      <UniqueIdentifier>{ef7a6f9d-4c0b-4f8f-a9b9-de0a763ef765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\GLSL">
+      <UniqueIdentifier>{429b91c0-14ed-420d-960b-ed9643358a4a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -73,28 +76,25 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="lib\imgui\imgui.cpp">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClCompile>
     <ClCompile Include="lib\imgui\imgui_demo.cpp">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClCompile>
     <ClCompile Include="lib\imgui\imgui_draw.cpp">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClCompile>
     <ClCompile Include="lib\imgui\imgui_impl_glfw.cpp">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClCompile>
     <ClCompile Include="lib\imgui\imgui_impl_opengl3.cpp">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClCompile>
     <ClCompile Include="lib\imgui\imgui_widgets.cpp">
-      <Filter>源文件\lib\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\glad\glad.c">
-      <Filter>源文件\lib\glad</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClCompile>
     <ClCompile Include="lib\shader\shader.cpp">
-      <Filter>源文件\lib\shader</Filter>
+      <Filter>源文件\Lib\shader</Filter>
     </ClCompile>
     <ClCompile Include="triangles\Triangles.cpp">
       <Filter>源文件\Triangles</Filter>
@@ -109,7 +109,7 @@
       <Filter>源文件\Camera</Filter>
     </ClCompile>
     <ClCompile Include="lib\camera\Camera.cpp">
-      <Filter>源文件\lib\camera</Filter>
+      <Filter>源文件\Lib\camera</Filter>
     </ClCompile>
     <ClCompile Include="Light\Light.cpp">
       <Filter>源文件\Light</Filter>
@@ -118,36 +118,39 @@
       <Filter>源文件\Shadow</Filter>
     </ClCompile>
     <ClCompile Include="lib\stb_image.cpp">
-      <Filter>源文件\lib\stb_image</Filter>
+      <Filter>源文件\Lib\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="Bezier\BezierApp.cpp">
+      <Filter>源文件\Bezier</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\imgui\imgui_internal.h">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\imgui\imstb_rectpack.h">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\imgui\imstb_textedit.h">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\imgui\imstb_truetype.h">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\imgui\imconfig.h">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\imgui\imgui.h">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\imgui\imgui_impl_glfw.h">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\imgui\imgui_impl_opengl3.h">
-      <Filter>源文件\lib\imgui</Filter>
+      <Filter>源文件\Lib\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\shader\shader.h">
-      <Filter>源文件\lib\shader</Filter>
+      <Filter>源文件\Lib\shader</Filter>
     </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>头文件</Filter>
@@ -165,7 +168,7 @@
       <Filter>源文件\Camera</Filter>
     </ClInclude>
     <ClInclude Include="lib\camera\Camera.h">
-      <Filter>源文件\lib\camera</Filter>
+      <Filter>源文件\Lib\camera</Filter>
     </ClInclude>
     <ClInclude Include="Light\Light.h">
       <Filter>源文件\Light</Filter>
@@ -174,7 +177,10 @@
       <Filter>源文件\Shadow</Filter>
     </ClInclude>
     <ClInclude Include="lib\stb_image.h">
-      <Filter>源文件\lib\stb_image</Filter>
+      <Filter>源文件\Lib\stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="Bezier\BezierApp.h">
+      <Filter>源文件\Bezier</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +260,12 @@
     </None>
     <None Include="Shadow\glsl\depth.vs.glsl">
       <Filter>源文件\Shadow\glsl</Filter>
+    </None>
+    <None Include="GLSL\2D.fs.glsl">
+      <Filter>源文件\GLSL</Filter>
+    </None>
+    <None Include="GLSL\2D.vs.glsl">
+      <Filter>源文件\GLSL</Filter>
     </None>
   </ItemGroup>
 </Project>

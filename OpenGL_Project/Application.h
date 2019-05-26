@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -15,6 +15,8 @@ public:
   virtual void clear() = 0;
 
   virtual void input(GLFWwindow* window) = 0;
+
+  virtual void updateWindowSize(int h, int w) = 0;
   
   int defaultHeight = 800;
 
